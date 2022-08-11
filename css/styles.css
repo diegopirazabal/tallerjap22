@@ -135,6 +135,10 @@ footer p {
   border-color: #fff transparent transparent transparent;
 }
 
+#subtituloAutos {
+  font-size: larger;
+}
+
 .lds-ring div:nth-child(1) {
   animation-delay: -0.45s;
 }
