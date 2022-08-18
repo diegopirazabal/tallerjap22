@@ -1,3 +1,4 @@
+
 document.addEventListener("DOMContentLoaded", function(){
     document.getElementById("autos").addEventListener("click", function() {
         localStorage.setItem("catID", 101);
@@ -11,4 +12,20 @@ document.addEventListener("DOMContentLoaded", function(){
         localStorage.setItem("catID", 103);
         window.location = "products.html"
     });
+
+   let user = JSON.parse(localStorage.getItem('usuarioLogeado'));
+   
+   if (user == null){
+    alert('Es requerido ingresar para navegar por el sitio.');
+    location.href = "login.html"
+   }else{
+    document.getElementById('usertag').innerHTML = user.nombre+' - Cerrar Sesion';
+   }
+
+   document.getElementById('usertag').addEventListener("click",()=>{
+    localStorage.removeItem('usuarioLogeado')
+    alert('Sesion Cerrada')
+
+    location.href = "index.html"
+   })
 });

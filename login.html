@@ -18,11 +18,27 @@
 
 <body>
   <main class="mt-5">
-    <div class="container">
-      <div class="alert alert-danger text-center" role="alert">
-        <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
+    <div id="formContent">
+      <div>
+        <img src="img/login-removebg-preview.png" id="iconLogin"/>
+      </div>
+      <div class="formularioLogin">
+        <div>
+          <label for="username">Email:<input type="text" id="username" class="form-control" name="username" placeholder="Email" required></label>
+          <br>
+          <br>
+          <label for="username">Contraseña:<input type="password" id="clave" class="form-control" name="clave" placeholder="Contraseña" required></label>        
+          <br>
+          <br>
+          <button class="btn btn-primary" id="inicio">Login</button>
+        </div>
+      </div>
+      <div class="alert alert-danger alert-dismissible fade" role="alert" id="alert-danger">
+        <p>Por favor ingrese Mail y Contraseña</p>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" id="botonAlerta"></button>
       </div>
     </div>
+    <img src="img/login2.png" id="imagenLogin">
   </main>
   <footer class="text-muted">
     <div class="container">
