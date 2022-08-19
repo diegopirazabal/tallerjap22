@@ -235,3 +235,8 @@ a.custom-card:hover {
 .mt-5 {
   background-color: #212529;
 }
+
+#usertag:hover {
+  opacity: 130%;
+  cursor:pointer;
+}
