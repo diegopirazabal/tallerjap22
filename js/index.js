@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function(){
    let user = JSON.parse(localStorage.getItem('usuarioLogeado'));
    
    if (user == null){
-    alert('Es requerido ingresar para navegar por el sitio.');
+    alert('Es necesario ingresar para navegar por el sitio.');
     location.href = "login.html"
    }else{
     document.getElementById('usertag').innerHTML = user.nombre+' - Cerrar Sesion';
