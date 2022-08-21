@@ -25,7 +25,6 @@ document.addEventListener("DOMContentLoaded", function(){
    document.getElementById('usertag').addEventListener("click",()=>{
     localStorage.removeItem('usuarioLogeado')
     alert('Sesion Cerrada')
-
     location.href = "index.html"
    })
 });
