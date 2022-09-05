@@ -146,4 +146,12 @@ document.addEventListener("DOMContentLoaded", function(e){
             });
         }
     });
+
+    let user = JSON.parse(localStorage.getItem('usuarioLogeado'));
+    document.getElementById('usertag').innerHTML = user.nombre+' - Cerrar Sesion';
+    document.getElementById('usertag').addEventListener("click",()=>{
+        localStorage.removeItem('usuarioLogeado')
+        alert('Sesion Cerrada')
+        location.href = "index.html"
+       })
 });
