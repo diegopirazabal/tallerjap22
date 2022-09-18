@@ -240,3 +240,10 @@ a.custom-card:hover {
   opacity: 200%;
   cursor:pointer;
 }
+
+#imagenes {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+

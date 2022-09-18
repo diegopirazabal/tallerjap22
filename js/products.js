@@ -1,10 +1,8 @@
 let productsArray = [];
-const ORDER_ASC_BY_PRICE = "AZ";
-const ORDER_DESC_BY_PRICE = "ZA";
 const ORDER_ASC_BY_NAME = "AZ";
 const ORDER_DESC_BY_NAME = "ZA";
-const ORDER_BY_PROD_COUNT = "az";
-const ORDER_BY_PROD_COUNT2 = "za"
+const ORDER_BY_PROD_COUNT = "Precio up";
+const ORDER_BY_PROD_COUNT2 = "Precio down";
 const ORDER_BY_PROD_COUNT3 = "Cant.";
 let currentProductsArray = [];
 let currentSortCriteria = undefined;
@@ -18,7 +16,7 @@ function showProductsList(array) {
     let product = array[i];
     htmlContentToAppend +=
       `
-        <div class="list-group-item list-group-item-action">
+        <div onclick="setProdID(${product.id})" class="list-group-item list-group-item-action">
             <div class="row">
                 <div class="col-3">
                     <img src="` +
@@ -122,7 +120,10 @@ function filtradoPorPrecio(array){
     showProductsList(listaFiltrada);
 }
 
-
+function setProdID(id) {
+    localStorage.setItem("prodID", id);
+    window.location = "product-info.html"
+}
 
 
 let catID = localStorage.getItem("catID");
