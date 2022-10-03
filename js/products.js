@@ -137,9 +137,27 @@ document.addEventListener("DOMContentLoaded", function (e) {
     }
   });
   let user = JSON.parse(localStorage.getItem("usuarioLogeado"));
-  document.getElementById("usertag").innerHTML =
-    user.nombre + " - Cerrar Sesion";
-  document.getElementById("usertag").addEventListener("click", () => {
+
+  if (user == null) {
+    alert("Es necesario ingresar para navegar por el sitio.");
+    location.href = "login.html";
+  } else {
+    document.getElementById("usertag").innerHTML =
+      `<div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+      ` +
+      user.nombre +
+      `
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+      <li><a class="dropdown-item" href="cart.html">Mi carrito</a></li>
+      <li><a class="dropdown-item" href="my-profile.html">Mi Perfil</a></li>
+      <li><a class="dropdown-item" href="#" id="logout">Cerrar Sesion</a></li>
+    </ul>
+  </div>`;
+  }
+
+  document.getElementById("logout").addEventListener("click", () => {
     localStorage.removeItem("usuarioLogeado");
     alert("Sesion Cerrada");
     location.href = "index.html";
