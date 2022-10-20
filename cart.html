@@ -36,10 +36,39 @@
     </div>
   </nav>
   <main>
+    <h1 style="text-align: center;">Carrito de Compras</h1>
     <div class="container">
-      <div class="alert alert-danger text-center" role="alert">
-        <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
+     <h3>Articulos a comprar</h3>
+     <div id="carro"></div>
+     <div class="envios">
+      <br>
+      <h4>Tipo de Envio</h4>
+      
+      <form class="border-bottom">
+        <input type="radio" id="envio1" name="envio1" value="15">
+        <label for="envio1"> Premium 2 a 5 Dias (15%)</label><br>
+        <input type="radio" id="envio2" name="envio2" value="7">
+        <label for="envio2"> Express 5 a 8 Dias (7%)</label><br>
+        <input type="radio" id="envio3" name="envio3" value="5">
+        <label for="envio3"> Standard de 12 a 15 Dias (5%)</label>
+        <br>
+        <br>
+        <h4>Direccion de Envio</h4>
+        <div class="row">
+          <div class="col">
+            <label for="calle" class="w-100"><h5>Calle</h5>
+            <input type="text" id="calle" name="calle" class="form-control w-100">
+            <label for="esquina"><h5>Esquina</h5></label>
+            <input type="text" name="esquina" id="esquina" class="form-control w-100">
+          </div>
+          <div class="col">
+            <label for="numero" class="w-75"><h5>Numero</h5>
+            <input type="text" id="numero" name="numero" class="form-control w-50">
+          </div>
       </div>
+      <br>
+      </form>
+     </div>
     </div>
   </main>
   <footer class="text-muted">
