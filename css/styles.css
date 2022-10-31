@@ -246,4 +246,7 @@ a.custom-card:hover {
   justify-content: space-evenly;
 }
 
-
+.valoresTabla {
+  display: inline;
+  float: right;
+}

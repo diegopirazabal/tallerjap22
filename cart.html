@@ -46,12 +46,12 @@
       <br>
       <h4>Tipo de Envio</h4>
       
-      <form class="border-bottom">
-        <input type="radio" id="envio1" name="envio1" value="15">
+      <form class="border-bottom" id="formulario">
+        <input type="radio" id="envio1" name="envio" value="0.15">
         <label for="envio1"> Premium 2 a 5 Dias (15%)</label><br>
-        <input type="radio" id="envio2" name="envio2" value="7">
+        <input type="radio" id="envio2" name="envio" value="0.07">
         <label for="envio2"> Express 5 a 8 Dias (7%)</label><br>
-        <input type="radio" id="envio3" name="envio3" value="5">
+        <input type="radio" id="envio3" name="envio" value="0.05">
         <label for="envio3"> Standard de 12 a 15 Dias (5%)</label>
         <br>
         <br>
@@ -59,17 +59,99 @@
         <div class="row">
           <div class="col">
             <label for="calle" class="w-100"><h5>Calle</h5>
-            <input type="text" id="calle" name="calle" class="form-control w-100">
+            <input type="text" id="calle" name="calle" class="form-control w-100" required>
             <label for="esquina"><h5>Esquina</h5></label>
-            <input type="text" name="esquina" id="esquina" class="form-control w-100">
+            <input type="text" name="esquina" id="esquina" class="form-control w-100" required>
           </div>
           <div class="col">
             <label for="numero" class="w-75"><h5>Numero</h5>
-            <input type="text" id="numero" name="numero" class="form-control w-50">
+            <input type="text" id="numero" name="numero" class="form-control w-50" required>
+            <div class="invalid-feedback" id="feedback-modal-terminos">
+              Debe aceptar los terminos y condiciones
+            </div>
           </div>
       </div>
       <br>
-      </form>
+      <!-- </form> -->
+      <br>
+      <h4>Costos</h4>
+      <div>
+        <table class="table table-bordered">
+          <tr>
+            <td>
+              <h6>Subototal</h6>
+              <p>Costo unitario del producto por cantidad <span id="subtotalTabla" class="valoresTabla"></span></p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <h6>Costo de envio</h6>
+              <p>Segun el tipo de envio <span id="envio" class="valoresTabla"></span> </p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <h6>Total($) <span id="totalTabla" class="valoresTabla"></span></h6>
+              
+            </td>
+          </tr>
+          </table>
+          <br>
+          <hr>
+          <h4>Forma de pago</h4>
+          <br>
+          <div class="container pt-10" >
+            <!-- Botón que muestra la ventana modal-->
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Seleccionar metodo
+              </button><br><br>
+              <span class="alert alert-success" id="alertaCompra" style="display: none;">Has comprado con exito!</span>
+            <!-- Ventana modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Metodo de pago</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <input type="radio" id="metodo1" name="metodo" value="0">
+                      <label for="metodo1"> Tarjeta de credito</label><br>
+                      
+                      <hr>
+                      <div class="row">
+                        <div class="col">
+                          <label for="cardNumber" class="w-100"><h6>Numero de Tarjeta</h6>
+                          <input type="text" id="cardNumber" class="form-control w-100 datosTarjeta">
+                          <label for="vencimiento"><h6>Vencimiento (MM/AA)</h6></label>
+                          <input type="text" id="vencimiento" class="form-control w-100 datosTarjeta">
+                        </div>
+                        <div class="col">
+                          <label for="secCode" class="w-75"><h6>Codigo de seg.</h6>
+                          <input type="text" id="secCode"  class="form-control w-50 datosTarjeta">
+                        </div>
+                      </div>
+                      <br>
+                    <hr>
+                    <input type="radio" id="metodo2" name="metodo" value="1">
+                    <label for="metodo2"> Transferencia bancaria</label><br><br>
+                    <label for="accountNumber" class="w-100"><h6>Numero de Cuenta</h6>
+                    <input type="text" id="accountNumber" class="form-control w-100">
+                    </div>
+                    
+                    <div class="modal-footer">
+
+                      <button type="button" class="btn btn-primary" data-bs-dismiss="modal" id="">Cerrar</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            <br>
+            <hr>
+            <button type="submit" class="btn btn-primary w-100 p-3" id="submit">Finalizar Compra</button>
+          </form>
+        </div>
+      </div>
      </div>
     </div>
   </main>
