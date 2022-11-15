@@ -65,7 +65,7 @@ function envios() {
       totalEnvio = ( listaCarrito[0].unitCost* parseFloat(tipoEnvio[i].value) + (listaCarrito[0].unitCost * parseInt((document.getElementById('unidades').value))))
       parcialEnvio = (listaCarrito[0].unitCost * parseFloat(tipoEnvio[i].value))
     }
-    console.log(totalEnvio)
+    
   document.getElementById('totalTabla').innerHTML = `${listaCarrito[0].currency}` + `${totalEnvio}`;
   document.getElementById('envio').innerHTML = `${listaCarrito[0].currency}` + `${parcialEnvio}`;
   }   
